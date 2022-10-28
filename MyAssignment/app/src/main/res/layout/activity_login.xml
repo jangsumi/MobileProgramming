@@ -15,9 +15,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="30dp"
-            android:textSize="20sp"
             android:text="SHOPPING MALL"
-            android:textColor="#191919" />
+            android:textColor="#191919"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/input_id"
