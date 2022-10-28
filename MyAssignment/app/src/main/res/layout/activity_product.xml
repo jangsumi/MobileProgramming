@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_mall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHOPPING MALL"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textColor="#191919"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:layout_gravity="center">
+
+        <RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/pic1"
+                style="@style/product"
+                android:src="@drawable/pic1" />
+
+            <TextView
+                style="@style/product_text"
+                android:text="초록 카라티"
+                android:layout_below="@id/pic1"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageButton
+                android:id="@+id/pic2"
+               android:src="@drawable/pic2"
+                style="@style/product" />
+
+            <TextView
+                style="@style/product_text"
+                android:text="검정 블루종"
+                android:layout_below="@id/pic2"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageButton
+                android:id="@+id/pic3"
+                android:src="@drawable/pic3"
+                style="@style/product" />
+
+            <TextView
+                style="@style/product_text"
+                android:text="남색 카라티"
+                android:layout_below="@id/pic3"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageButton
+                android:id="@+id/pic4"
+                android:src="@drawable/pic4"
+                style="@style/product" />
+
+            <TextView
+                style="@style/product_text"
+                android:text="회색 맨투맨"
+                android:layout_below="@id/pic4"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageButton
+                android:id="@+id/pic5"
+                android:src="@drawable/pic5"
+                style="@style/product" />
+
+            <TextView
+                style="@style/product_text"
+                android:text="검정 기본티"
+                android:layout_below="@id/pic5"/>
+        </RelativeLayout>
+
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="회원정보"
+            android:layout_marginRight="5dp" />
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="상품관리" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

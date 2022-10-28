@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/text_appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
+            android:text="SHOPPING MALL"
+            android:textColor="#191919" />
+
+        <EditText
+            android:id="@+id/input_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_appname"
+            android:hint="아이디를 입력해주세요." />
+
+        <EditText
+            android:id="@+id/input_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_id"
+            android:hint="비밀번호를 입력해주세요."></EditText>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_pw"
+            android:layout_marginTop="10dp"
+            android:text="로그인"></Button>
+
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginRight="11dp"
+            android:text="회원가입"></Button>
+
+        <Button
+            android:id="@+id/btn_nonmember"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_toRightOf="@+id/btn_join"
+            android:text="비회원으로 쇼핑"></Button>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
