@@ -40,13 +40,14 @@ class Join: AppCompatActivity() {
         btn = findViewById(R.id.btn_ok)
         checkbtn = findViewById(R.id.btn_check)
 
+
+
         warningtextid = findViewById(R.id.warning_id)
         warningtextpw = findViewById(R.id.warning_pw)
 
         val prefs: SharedPreferences = getSharedPreferences("JoinInfo", 0)
         val editor: SharedPreferences.Editor = prefs.edit()
 
-//      확인 버튼을 눌렀을 때 같은 키가 있으면 있으면 중복입니다를 Visible로 바꿔준다
         warningtextid.visibility = View.INVISIBLE
 
         checkbtn.setOnClickListener {
@@ -76,29 +77,27 @@ class Join: AppCompatActivity() {
             if (!pwPattern.matcher(userPw).find()) {
                 warningtextpw.visibility = View.VISIBLE
             } else {
-
                 if (available_id != userId) {
                     warningtextid.visibility = View.VISIBLE
                 } else {
-                    var userName = EditName.text.toString()
-                    var userAd = EditAd.text.toString()
-                    var userTel = EditTel.text.toString()
+                        var userName = EditName.text.toString()
+                        var userAd = EditAd.text.toString()
+                        var userTel = EditTel.text.toString()
 
-                    val userInfoJson = JSONObject()
-                    userInfoJson.put("passward", userId)
-                    userInfoJson.put("name", userName)
-                    userInfoJson.put("address", userAd)
-                    userInfoJson.put("tel", userTel)
+                        val userInfoJson = JSONObject()
+                        userInfoJson.put("password", userPw)
+                        userInfoJson.put("name", userName)
+                        userInfoJson.put("address", userAd)
+                        userInfoJson.put("tel", userTel)
 
-                    val userinfoString = userInfoJson.toString()
+                        val userinfoString = userInfoJson.toString()
 
-                    editor.putString(userId, userinfoString)
-                    editor.apply()
+                        editor.putString(userId, userinfoString)
+                        editor.apply()
 
-                    startActivity(Intent(this, Login::class.java))
+                        startActivity(Intent(this, Login::class.java))
                 }
             }
-
         }
 
     }

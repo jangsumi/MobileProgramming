@@ -1,18 +1,22 @@
-package com.example.myassignment;
+package com.example.myassignment
 
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-ㅑmport android.widget.Toast
-
+import android.widget.Toast
+import org.json.JSONObject
 
 
 class Login : AppCompatActivity() {
     private lateinit var LoginBtn: Button
     private lateinit var JoinBtn: Button
     private lateinit var NonMemBtn: Button
+
+    private lateinit var InputId: EditText
+    private lateinit var InputPw: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +26,32 @@ class Login : AppCompatActivity() {
         JoinBtn = findViewById(R.id.btn_join)
         NonMemBtn = findViewById(R.id.btn_nonmember)
 
+        InputId = findViewById(R.id.input_id)
+        InputPw = findViewById(R.id.input_pw)
+
+        val prefs: SharedPreferences = getSharedPreferences("JoinInfo", 0)
+
         LoginBtn.setOnClickListener {
-//            if (같으면) {
-                startActivity(Intent(this, Product::class.java))
-//            } else {
-//
-//            }
+            var userId = InputId.text.toString()
+            var userPw = InputPw.text.toString()
+
+            if (userId.isNotEmpty() && userPw.isNotEmpty()) {
+                var isAvailable = prefs.getString(userId, "none")
+
+                if ( isAvailable == "none") {
+                    Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    var info = JSONObject(isAvailable)
+                    if (userPw != info.getString("password")) {
+                        Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+                    } else {
+                        startActivity(Intent(this, Product::class.java))
+                    }
+                }
+            } else {
+                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+            }
         }
         JoinBtn.setOnClickListener {
             startActivity(Intent(this, Join::class.java))

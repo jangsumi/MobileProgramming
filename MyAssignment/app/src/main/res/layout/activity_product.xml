@@ -94,6 +94,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/infoBtn"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="회원정보"
