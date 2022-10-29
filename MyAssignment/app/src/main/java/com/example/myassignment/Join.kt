@@ -1,10 +1,15 @@
 package com.example.myassignment
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.json.JSONObject
+import java.util.regex.Pattern
 
 class Join: AppCompatActivity() {
     lateinit var EditId: EditText
@@ -14,6 +19,12 @@ class Join: AppCompatActivity() {
     lateinit var EditAd: EditText
 
     lateinit var btn: Button
+    lateinit var checkbtn: Button
+
+    var available_id: String = ""
+
+    lateinit var warningtextid: TextView
+    lateinit var warningtextpw: TextView
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,23 +38,69 @@ class Join: AppCompatActivity() {
         EditAd = findViewById(R.id.input_join_ad)
 
         btn = findViewById(R.id.btn_ok)
+        checkbtn = findViewById(R.id.btn_check)
+
+        warningtextid = findViewById(R.id.warning_id)
+        warningtextpw = findViewById(R.id.warning_pw)
 
         val prefs: SharedPreferences = getSharedPreferences("JoinInfo", 0)
         val editor: SharedPreferences.Editor = prefs.edit()
 
+//      확인 버튼을 눌렀을 때 같은 키가 있으면 있으면 중복입니다를 Visible로 바꿔준다
+        warningtextid.visibility = View.INVISIBLE
+
+        checkbtn.setOnClickListener {
+            var userId = EditId.text.toString()
+            var isAvailable = prefs.getString(userId, "no id")
+
+            if (isAvailable == "no id") {
+                warningtextid.visibility = View.INVISIBLE
+                available_id = userId
+            } else {
+                warningtextid.visibility = View.VISIBLE
+            }
+        }
+
+        warningtextpw.visibility = View.INVISIBLE
+
+
+        val pwReg = "^.*(?=^.{8,15}$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"
+        val pwPattern = Pattern.compile(pwReg)
+
 
 
         btn.setOnClickListener {
-            val id: String = EditId.text.toString()
-            val pw: String = EditPw.text.toString()
-            val name: String = EditName.text.toString()
-            val tel: String = EditTel.text.toString()
-            val ad: String = EditAd.text.toString()
-            val info = setOf(pw, name, tel, ad)
+            var userId = EditId.text.toString()
+            var userPw = EditPw.text.toString()
 
-            editor.putStringSet(id, info)
-            editor.apply()
+            if (!pwPattern.matcher(userPw).find()) {
+                warningtextpw.visibility = View.VISIBLE
+            } else {
+
+                if (available_id != userId) {
+                    warningtextid.visibility = View.VISIBLE
+                } else {
+                    var userName = EditName.text.toString()
+                    var userAd = EditAd.text.toString()
+                    var userTel = EditTel.text.toString()
+
+                    val userInfoJson = JSONObject()
+                    userInfoJson.put("passward", userId)
+                    userInfoJson.put("name", userName)
+                    userInfoJson.put("address", userAd)
+                    userInfoJson.put("tel", userTel)
+
+                    val userinfoString = userInfoJson.toString()
+
+                    editor.putString(userId, userinfoString)
+                    editor.apply()
+
+                    startActivity(Intent(this, Login::class.java))
+                }
+            }
+
         }
+
     }
     @Override
     override fun onDestroy() {

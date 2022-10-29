@@ -1,9 +1,13 @@
 package com.example.myassignment;
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+ㅑmport android.widget.Toast
+
+
 
 class Login : AppCompatActivity() {
     private lateinit var LoginBtn: Button
@@ -19,7 +23,11 @@ class Login : AppCompatActivity() {
         NonMemBtn = findViewById(R.id.btn_nonmember)
 
         LoginBtn.setOnClickListener {
-            startActivity(Intent(this, Product::class.java))
+//            if (같으면) {
+                startActivity(Intent(this, Product::class.java))
+//            } else {
+//
+//            }
         }
         JoinBtn.setOnClickListener {
             startActivity(Intent(this, Join::class.java))
@@ -30,7 +38,10 @@ class Login : AppCompatActivity() {
 
 
 
+
     }
+
+
 
 
 

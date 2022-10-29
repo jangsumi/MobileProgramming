@@ -32,13 +32,15 @@
             android:hint="아이디를 입력해주세요." />
 
         <Button
+            android:id="@+id/btn_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="중복확인"/>
+            android:text="확인"/>
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/warning_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="아이디가 중복입니다."
@@ -71,11 +73,11 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/warning_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="비밀번호를 더 길게 설정하세요."
+            android:text="특수문자 포함 8-15자 이내로 설정하세요."
             android:textColor="#FF0000" />
-        <!--            android:text="특수문자를 포함시켜주세요."-->
 
         <TextView
             android:layout_width="match_parent"
