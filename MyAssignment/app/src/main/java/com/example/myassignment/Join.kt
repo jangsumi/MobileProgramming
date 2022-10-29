@@ -4,9 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONObject
 import java.util.regex.Pattern
@@ -20,6 +18,7 @@ class Join: AppCompatActivity() {
 
     lateinit var btn: Button
     lateinit var checkbtn: Button
+    lateinit var acceptbtn: RadioButton
 
     var available_id: String = ""
 
@@ -39,8 +38,7 @@ class Join: AppCompatActivity() {
 
         btn = findViewById(R.id.btn_ok)
         checkbtn = findViewById(R.id.btn_check)
-
-
+        acceptbtn = findViewById(R.id.btn_accept)
 
         warningtextid = findViewById(R.id.warning_id)
         warningtextpw = findViewById(R.id.warning_pw)
@@ -74,12 +72,13 @@ class Join: AppCompatActivity() {
             var userId = EditId.text.toString()
             var userPw = EditPw.text.toString()
 
-            if (!pwPattern.matcher(userPw).find()) {
-                warningtextpw.visibility = View.VISIBLE
-            } else {
-                if (available_id != userId) {
-                    warningtextid.visibility = View.VISIBLE
+            if (acceptbtn.isChecked) {
+                if (!pwPattern.matcher(userPw).find()) {
+                    warningtextpw.visibility = View.VISIBLE
                 } else {
+                    if (available_id != userId) {
+                        warningtextid.visibility = View.VISIBLE
+                    } else {
                         var userName = EditName.text.toString()
                         var userAd = EditAd.text.toString()
                         var userTel = EditTel.text.toString()
@@ -96,7 +95,10 @@ class Join: AppCompatActivity() {
                         editor.apply()
 
                         startActivity(Intent(this, Login::class.java))
+                    }
                 }
+            } else {
+                Toast.makeText(this, "약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
