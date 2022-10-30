@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myassignment.databinding.ItemRecyclerBinding
 
 
-class ItemAdapter(private  val data: Array<ItemData>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
+class ItemAdapter(private  val data: ArrayList<ItemData>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
