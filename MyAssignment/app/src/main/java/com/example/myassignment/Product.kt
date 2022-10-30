@@ -100,11 +100,17 @@ class Product: AppCompatActivity() {
             setTitle("상품 삭제")
             setMessage("삭제할 상품의 번호를 입력하세요.")
             setView(builderItem.root)
-            setPositiveButton("OK") { _: DialogInterface, _ ->
-                if (editText.text != null) {
+            setPositiveButton("삭제") { _: DialogInterface, _ ->
+                try {
                     var i = Integer.parseInt(editText.text.toString())
-                    datas.remove(datas[i-1])
-                    itemAdapter!!.notifyDataSetChanged()
+                    if (i <= datas.size - 1) {
+                        datas.remove(datas[i-1])
+                        itemAdapter!!.notifyDataSetChanged()
+                    } else {
+                        Toast.makeText(binding.root.context, "", Toast.LENGTH_SHORT)
+                    }
+                } catch (e: NumberFormatException) {
+                    Toast.makeText(binding.root.context, "", Toast.LENGTH_SHORT)
                 }
             }
             builder.show()
