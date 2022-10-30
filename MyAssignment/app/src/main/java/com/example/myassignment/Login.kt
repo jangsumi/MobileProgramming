@@ -46,7 +46,11 @@ class Login : AppCompatActivity() {
                     if (userPw != info.getString("password")) {
                         Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
                     } else {
-                        startActivity(Intent(this, Product::class.java))
+                        val intent = Intent(this, Product::class.java)
+                        intent.putExtra("myInfoName", info.getString("name"))
+                        intent.putExtra("myInfoAd", info.getString("address"))
+                        intent.putExtra("myInfoTel", info.getString("tel"))
+                        startActivity(intent)
                     }
                 }
             } else {
@@ -59,14 +63,5 @@ class Login : AppCompatActivity() {
         NonMemBtn.setOnClickListener{
             startActivity(Intent(this, Product::class.java))
         }
-
-
-
-
     }
-
-
-
-
-
 }

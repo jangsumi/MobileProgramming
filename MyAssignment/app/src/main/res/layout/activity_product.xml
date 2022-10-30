@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="30dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Product">
 
     <TextView
         android:id="@+id/text_mall"
@@ -15,99 +18,38 @@
         android:textSize="20sp"
         android:textColor="#191919"/>
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="3"
-        android:layout_gravity="center">
 
-        <RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-            <ImageButton
-                android:id="@+id/pic1"
-                style="@style/product"
-                android:src="@drawable/pic1" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_recycler" />
 
-            <TextView
-                style="@style/product_text"
-                android:text="초록 카라티"
-                android:layout_below="@id/pic1"/>
-        </RelativeLayout>
-
-        <RelativeLayout>
-            <ImageButton
-                android:id="@+id/pic2"
-               android:src="@drawable/pic2"
-                style="@style/product" />
-
-            <TextView
-                style="@style/product_text"
-                android:text="검정 블루종"
-                android:layout_below="@id/pic2"/>
-        </RelativeLayout>
-
-        <RelativeLayout>
-            <ImageButton
-                android:id="@+id/pic3"
-                android:src="@drawable/pic3"
-                style="@style/product" />
-
-            <TextView
-                style="@style/product_text"
-                android:text="남색 카라티"
-                android:layout_below="@id/pic3"/>
-        </RelativeLayout>
-
-        <RelativeLayout>
-            <ImageButton
-                android:id="@+id/pic4"
-                android:src="@drawable/pic4"
-                style="@style/product" />
-
-            <TextView
-                style="@style/product_text"
-                android:text="회색 맨투맨"
-                android:layout_below="@id/pic4"/>
-        </RelativeLayout>
-
-        <RelativeLayout>
-            <ImageButton
-                android:id="@+id/pic5"
-                android:src="@drawable/pic5"
-                style="@style/product" />
-
-            <TextView
-                style="@style/product_text"
-                android:text="검정 기본티"
-                android:layout_below="@id/pic5"/>
-        </RelativeLayout>
-
-
-
-    </GridLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/infoBtn"
-            android:layout_width="170dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="회원정보"
             android:layout_marginRight="5dp" />
 
         <Button
-            android:layout_width="170dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="상품관리" />
-
-
     </LinearLayout>
-
-
 </LinearLayout>

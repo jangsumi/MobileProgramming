@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/item_pic"
+            style="@style/product"
+            android:src="@drawable/pic1" />
+
+        <TextView
+
+            android:id="@+id/item_text"
+            style="@style/product_text"
+            android:layout_width="170dp"
+            android:gravity="center"
+            android:text="초록 카라티"
+            android:layout_below="@id/item_pic"/>
+</LinearLayout>
