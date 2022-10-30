@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="600dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="30dp"
     android:orientation="vertical"
@@ -19,15 +19,13 @@
         android:textColor="#191919"/>
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_gravity="center"
         android:id="@+id/recycler_view"
-        android:paddingVertical="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="487dp"
+        android:layout_gravity="center"
         android:layout_weight="1"
+        android:paddingVertical="20dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/item_recycler" />
 
@@ -54,4 +52,4 @@
             android:layout_marginLeft="5dp"
             android:text="상품관리" />
     </LinearLayout>
-</LinearLayout>
+</GridLayout>
