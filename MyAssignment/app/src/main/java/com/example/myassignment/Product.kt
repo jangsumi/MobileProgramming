@@ -50,7 +50,7 @@ class Product: AppCompatActivity() {
             if (name == null) {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("비회원으로 쇼핑중")
-                    .setMessage("로그인시 이용할 수 있는 서비스 입니다. 회원가입 하시겠습니까?")
+                    .setMessage("로그인 시 이용할 수 있는 서비스입니다. 회원가입하시겠습니까?")
                     .setNegativeButton("닫기", DialogInterface.OnClickListener { dialogInterface, i ->
                         Toast.makeText(this, "", Toast.LENGTH_SHORT)
                     })
