@@ -103,7 +103,7 @@ class Product: AppCompatActivity() {
             setPositiveButton("삭제") { _: DialogInterface, _ ->
                 try {
                     var i = Integer.parseInt(editText.text.toString())
-                    if (i <= datas.size - 1) {
+                    if (i>0 && i <= datas.size) {
                         datas.remove(datas[i-1])
                         itemAdapter!!.notifyDataSetChanged()
                     } else {
