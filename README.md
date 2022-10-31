@@ -23,8 +23,8 @@
   
 **빌드 시 유의사항**
   - 뷰 결합(View Binding) 설정
-    - 코드 작성에 findViewById를 대체하기 위하여 뷰 결합(View Binding) 사용
-    - 뷰 결합을 사용 설정하려면 아래와 같이 viewBinding 요소를 build.gradle 파일에 추가
+    - findViewById 대신 뷰 결합(View Binding) 사용함
+    - 사용 설정을 위해 viewBinding 요소를 build.gradle 파일에 추가
   
 ```kotlin  
 android {
@@ -38,8 +38,8 @@ android {
 <br />
 
   - RecyclerView 라이브러리 추가
-    - 코드 작성에 동적 목록 구현을 위해 RecyclerView 가 사용함
-    - 애플리케이션이나 모듈의 build.gradle 파일에 필요한 아티팩트의 종속 항목을 추가
+    - 상품 페이지에 RecyclerView를 사용함
+    - 애플리케이션  모듈의 build.gradle 파일에 필요한 아티팩트의 종속 항목을 추가
   
 
 ```kotlin  
