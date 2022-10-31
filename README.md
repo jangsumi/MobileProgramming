@@ -2,14 +2,53 @@
 **국민대학교 2022년 2학기 모바일 프로그래밍 수업 개인 과제** <br />
 - 국민대학교 소프트웨어융합대학 소프트웨어학부
 - 20193216 장수미
-
+<br />
 **개발환경 및 실행 환경** <br />
 - 개발 환경
-  - Android Studio 11.0.12
+  - Android Studio Chipmunk | 2021.2.1 Patch 2
+  - VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
+  - macOS 12.1
 
 - 실행 환경
   - Pixel 2 API 30
   - 내부저장소 접근 `data/data/com.example.myassignment/shared_prefs/JoinInfo.xml`
+  
+  <br />
+  
+**설치 후 실행**
+  - GitHub Repository에 최상단에 위치한 app-debug.apk로 설치 가능
+  - Github Repository를 Clone한 뒤, Android Studio에서 Run 'app' 버튼 클릭하여 실행 가능
+  
+  <br />
+  
+**빌드 시 유의사항**
+  - 뷰 결합(View Binding) 설정
+    - 코드 작성에 findViewById를 대체하기 위하여 뷰 결합(View Binding) 사용
+    - 뷰 결합을 사용 설정하려면 아래와 같이 viewBinding 요소를 build.gradle 파일에 추가
+  
+```kotlin  
+android {
+        ...
+        viewBinding {
+            enabled = true
+        }
+    }
+```    
+
+<br />
+
+  - RecyclerView 라이브러리 추가
+    - 코드 작성에 동적 목록 구현을 위해 RecyclerView 가 사용함
+    - 애플리케이션이나 모듈의 build.gradle 파일에 필요한 아티팩트의 종속 항목을 추가
+  
+
+```kotlin  
+dependencies {
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    // For control over item selection of both touch and mouse driven selection
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+}
+```    
 
 <br /><br />
 
