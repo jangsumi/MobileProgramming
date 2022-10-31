@@ -79,7 +79,7 @@
     - 만약 회원가입시에 공백으로 둔 항목이 있다면 그 부분은 공백으로 출력된다.<br />
     - 닫기버튼을 누르면 다시 3번째 페이지를 보여준다.<br />
     2) 비회원인 경우<br />
-    - 로그인 시 이용할 수 있는 서비스입니다. 회원가입하시겠습니까? 라는 문구가 뜬다<br />
+    - 로그인 시 이용할 수 있는 서비스입니다. 회원가입 하시겠습니까? 라는 문구가 뜬다<br />
     - 회원가입하기 버튼을 누르면 2번째 페이지인 회원가입 페이지로 이동한다.<br />
     - 이동 후 뒤로가기를 누르면 상품 페이지로 돌아온다<br />
     - 닫기버튼을 누르면 다시 3번째 페이지를 보여준다.<br />
@@ -93,4 +93,46 @@
     - (초기 상태에서) 1을 입력하면 첫번째 상품인 "초록 카라티"가 사라진다.<br />
     - 1보다 작은 값, 총 상품의 개수보다 큰 값, 숫자가 아닌 값이 입력될 경우 아무 변화도 일어나지 않는다.<br />
 
+<br /><br />
 
+## 스크린샷
+
+### 로그인 페이지<br />
+초기화면, 로그인 실패
+<div>
+<img width="200" alt="01 로그인 페이지" src="https://user-images.githubusercontent.com/104475363/198942431-9ed7bd89-46a5-40d6-919a-d90fc8e47c66.png">
+<img width="200" alt="03  로그인 실패" src="https://user-images.githubusercontent.com/104475363/198942437-ea7b42ed-a118-4bd9-9556-b7e21ff1041e.png">
+<div/>
+
+<br/>
+
+### 회원가입 페이지<br />
+<img width="200" alt="02 회원가입 페이지" src="https://user-images.githubusercontent.com/104475363/198942434-302c8aaa-eb7c-4192-9655-b4e8f5f21130.png">
+
+<br/>
+
+### 상품 페이지<br />
+
+초기화면, 회원 정보
+<div>
+<img width="200" alt="04 상품 페이지" src="https://user-images.githubusercontent.com/104475363/198942445-4b0a5ee0-b03d-463d-8ccc-6fb9d395a604.png">
+<img width="200" alt="10 회원 정보" src="https://user-images.githubusercontent.com/104475363/198942652-f7b0c87f-c3b8-4bda-b94f-aa84cd03b833.png">
+<div/>
+
+<br/>
+
+상품 관리, 상품 추가 전, 상품 추가 후
+<div>
+<img width="200" alt="05 상품 관리" src="https://user-images.githubusercontent.com/104475363/198942448-92006f12-081d-4ceb-977c-b534548fd840.png">
+<img width="200" alt="06 상품 추가 전" src="https://user-images.githubusercontent.com/104475363/198942459-013d859d-a87e-4e8f-8004-c8576afb0d43.png">
+<img width="200" alt="07 상품 추가 후" src="https://user-images.githubusercontent.com/104475363/198942464-e1fbcfe2-49da-4cea-8b1f-5e7715cc82c2.png">
+<div/>
+
+<br/>
+
+상품 삭제, 상품 삭제 전, 상품  후
+<div>
+<img width="200" alt="08 상품 삭제" src="https://user-images.githubusercontent.com/104475363/198942468-489e5b97-dc51-49e7-a3cb-8d4cf7cf3e66.png">
+<img width="200" alt="04 상품 페이지" src="https://user-images.githubusercontent.com/104475363/198942445-4b0a5ee0-b03d-463d-8ccc-6fb9d395a604.png">
+<img width="200" alt="09 상품 삭제 후" src="https://user-images.githubusercontent.com/104475363/198942471-faf486fe-4a05-4176-aa2b-5329b23de61b.png">
+<div/>
